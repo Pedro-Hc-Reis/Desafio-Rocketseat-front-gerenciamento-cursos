@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="pt-BR">
+<head>
+    <title>Courses</title>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-[#141414] flex flex-col items-center justify-center h-screen">
+<h1 class="text-[#7C3AFF] font-bold text-4xl mb-7">Cursos</h1>
+
+<div class="bg-[#7C3AFF] text-white w-96 p-2.5 rounded-t-lg">
+    <h1 th:text="${course.name}"></h1>
+</div>
+<div class="bg-[#1B1B1B] text-white w-96 p-2.5">
+    <p>Curso: <label th:text="${course.name}"></label></p>
+</div>
+<div class="bg-[#1B1B1B] text-white w-96 p-2.5">
+    <p>Categoria: <label th:text="${course.name}"></label></p>
+</div>
+<div class="bg-[#1B1B1B] text-white w-96 p-2.5">
+    <p>Professor: <label th:text="${course.name}"></label></p>
+</div>
+<div class="bg-[#1B1B1B] text-white w-96 p-2.5 rounded-b-lg">
+    <p>Inicio: Desde <label th:text="${#temporals.format(course.createdAt, 'dd/MM/yyyy')}"></label></p>
+</div>
+
+<div class="flex-content mt-6">
+    <a th:href="@{'/edit/'+${course.id}}"
+       class="w-36 text-center text-white font-bold bg-[#7C3AFF] hover:bg-[#4412A5] rounded-lg px-5 py-2.5 mt-7">Editar
+        curso</a>
+    <a th:href="@{'/delete/'+${course.id}}"
+       class="w-36 text-center text-white font-bold bg-[#BA0000] hover:bg-[#8C1010] rounded-lg px-5 py-2.5 mt-7">Excluir
+        curso</a>
+</div>
+
+</body>
+</html>
