@@ -21,7 +21,6 @@ public class CourseController {
     @GetMapping
     public String listPage ( Model model ) {
         var result = service.list ( );
-        System.out.println ( Arrays.toString ( result ) );
         model.addAttribute ( "courses" , result );
         return "listCourses";
     }
